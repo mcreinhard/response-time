@@ -1,0 +1,13 @@
+before_install:
+  - yes | sudo add-apt-repository ppa:hansjorg/rust
+  - sudo apt-get update
+install:
+  - sudo apt-get install rust-nightly
+  - ./configure
+script:
+  - make lib
+  - make test
+  - make examples
+  - make doc
+os:
+  - linux
